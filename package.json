@@ -1,0 +1,23 @@
+{
+  "name": "ibit_task",
+  "version": "1.0.0",
+  "main": "main.mjs",
+  "scripts": {
+    "example_client": "node examples/wsc.mjs 8080",
+    "service": "VERBOSE=0 DEBUG=0 EMCONT_URL=\"https://rates.emcont.com/\" EMCONT_POLL_INTERVAL_MS=1000 WS_PORT=8080 HISTORY_DEPTH_MINUTES=30 SQLITE3_ASSETS_DB=\"./assets/assets.db\" node main.mjs"
+  },
+  "keywords": [
+    "sqlite3",
+    "ws",
+    "rest api",
+    "workers"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sqlite3": "^5.1.7",
+    "winston": "^3.14.2",
+    "ws": "^8.18.0"
+  }
+}
