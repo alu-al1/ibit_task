@@ -11,11 +11,8 @@ export class RatesPktCompact extends ArrayBuffer {
   }
 
   encode(id, ts, bid, ask) {
-    console.log(this);
     const dv = new DataView(this);
     let cur = 0;
-
-    console.log(dv)
 
     dv.setUint32(cur, id);
     cur += Uint32Array.BYTES_PER_ELEMENT;
@@ -31,10 +28,7 @@ export class RatesPktCompact extends ArrayBuffer {
 
     dv.setFloat32(cur, ask);
     cur += Float32Array.BYTES_PER_ELEMENT;
-
-    console.log(dv);
-    console.log(this);
-
+    
     return this;
   }
 
@@ -57,7 +51,6 @@ export class RatesPktCompact extends ArrayBuffer {
     acc[3] = dv.getFloat32(cur);
     cur += Float32Array.BYTES_PER_ELEMENT;
 
-    console.log(acc)
     return acc;
   }
 }
